@@ -1,1 +1,29 @@
-<p>product-create works!</p>
+<div style="width: 500%; margin: auto;">
+    <div class="submit-form">
+
+        <div *ngIf="!submitted">
+            <div class="form-group">
+                <label for="name" >Nombre</label>
+                <input type="text" class="form-control"
+                id="name" required name="name"
+                [(ngModel)]="product.name" />            
+            </div>
+            
+            <div class="form-group">
+                <label for="description">Descripción</label>
+                <input type="text" class="form-control"
+                id="description" required name="description"
+                [(ngModel)]="product.description" />            
+            </div>
+
+            <button (clock)="createProduct()" class="btn btn-success">
+                Create
+            </button>
+        </div>
+
+        <div *ngIf="submitted">
+            <h3>Se creó el producto con exito!</h3>
+            <button class="btn btn-success" (click) = "newProduct()">Neevo...</button>
+        </div>
+    </div>
+</div>
